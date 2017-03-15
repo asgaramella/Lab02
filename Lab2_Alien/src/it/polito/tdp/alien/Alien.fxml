@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="419.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.AlienController">
+<BorderPane prefHeight="419.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.AlienController">
    <top>
       <Label text="Lab 1 - Alien Translator" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -66,7 +66,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField promptText="Parola da cercare...">
+                  <TextField fx:id="txtRicerca" promptText="Parola da cercare...">
                      <opaqueInsets>
                         <Insets right="10.0" />
                      </opaqueInsets>

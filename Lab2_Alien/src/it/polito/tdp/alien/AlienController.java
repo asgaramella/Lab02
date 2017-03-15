@@ -93,18 +93,18 @@ public class AlienController {
     void doRicerca(ActionEvent event) {
     	String stemp=txtRicerca.getText().toLowerCase();
     	stemp=stemp.replaceAll("\\?", ".");
-    	LinkedList<String>
+    	LinkedList<String> listone=new LinkedList<String>();
     	for(WordEnhanced etemp: atemp.getDizionario()){
-    		if(etemp.compare(stemp))
-    			List<String> ltemp=new LinkedList<String>(atemp.translateWord(etemp.getAlienWord()));
+    		if(etemp.compare(stemp)){
+    			LinkedList<String> ltemp=new LinkedList<String>(atemp.translateWord(etemp.getAlienWord()));
+    			listone.addAll(ltemp);
+    			}
+    		for(String s:listone){
+				txtResult.appendText(s+"\n");
     	}
     	
     	
-    	
-    	
-    	
-    
-    	
-    }
+    	} 	
+ }
     
 }
