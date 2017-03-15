@@ -64,6 +64,19 @@
                   <TextArea fx:id="txtResult" prefHeight="151.0" prefWidth="458.0" text="Welcome to Alien Dictionary v2016." />
                </children>
             </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField promptText="Parola da cercare...">
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="btnRicerca" mnemonicParsing="false" onAction="#doRicerca" text="Ricerca" />
+               </children>
+            </HBox>
             <HBox alignment="BASELINE_RIGHT" prefHeight="43.0" prefWidth="455.0">
                <children>
                   <Button fx:id="btnReset" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#doReset" text="Clear Text">

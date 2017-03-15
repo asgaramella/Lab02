@@ -32,7 +32,7 @@ public class WordEnhanced {
 
 
 	public boolean compare(String alienWord){
-		return this.alienWord.equals(alienWord);
+		return this.alienWord.matches(alienWord);
 		
 	}
 

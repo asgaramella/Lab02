@@ -32,6 +32,10 @@ public class AlienController {
     private Button btnTranslate;
     @FXML
     private Button btnReset;
+    @FXML
+    private Button btnRicerca;
+    @FXML
+    private TextField txtRicerca;
         
     
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -83,5 +87,24 @@ public class AlienController {
     void doReset(ActionEvent event) {
     	txtResult.clear();
     	}
+    
+
+    @FXML
+    void doRicerca(ActionEvent event) {
+    	String stemp=txtRicerca.getText().toLowerCase();
+    	stemp=stemp.replaceAll("\\?", ".");
+    	LinkedList<String>
+    	for(WordEnhanced etemp: atemp.getDizionario()){
+    		if(etemp.compare(stemp))
+    			List<String> ltemp=new LinkedList<String>(atemp.translateWord(etemp.getAlienWord()));
+    	}
+    	
+    	
+    	
+    	
+    	
+    
+    	
+    }
     
 }

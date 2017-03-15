@@ -9,6 +9,14 @@ public class AlienDictionary {
 	public AlienDictionary() {
 		super();
 	}
+	
+	
+
+	public List<WordEnhanced> getDizionario() {
+		return dizionario;
+	}
+
+
 
 	public void addWord(String alienWord, String translation){
 		boolean trovato=false;
