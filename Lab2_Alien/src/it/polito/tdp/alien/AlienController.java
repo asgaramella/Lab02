@@ -5,7 +5,7 @@ package it.polito.tdp.alien;
  */
 
 
-
+import java.util.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,11 +52,15 @@ public class AlienController {
     	primaVolta=false;
     	String[] result =txtWord.getText().toLowerCase().split(" ");
     	if(result.length==1){
+    		
     		if(result[0].matches("[A-Za-z]*")){
-    			txtResult.appendText(atemp.translateWord(result[0])+"\n");
+    			LinkedList<String> ltemp=new LinkedList<String>(atemp.translateWord(result[0]));
+    			for(String stemp:ltemp){
+    				txtResult.appendText(stemp+"\n");
+    			}
     		}
     		else
-    			txtResult.appendText("Formato traduzione errato!");
+    			txtResult.appendText("Formato traduzione errato!\n");
     	}
     	
     	if(result.length==2)   {
