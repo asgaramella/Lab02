@@ -17,6 +17,9 @@ import javafx.scene.control.TextField;
 
 public class AlienController {
 	
+	private AlienDictionary atemp= new AlienDictionary();
+	private boolean primaVolta=true;
+	
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -43,13 +46,38 @@ public class AlienController {
     
     @FXML
     void doTranslate(ActionEvent event) {
-    	    	
+    	if(primaVolta){
+    		txtResult.clear();
+    	}
+    	primaVolta=false;
+    	String[] result =txtWord.getText().toLowerCase().split(" ");
+    	if(result.length==1){
+    		if(result[0].matches("[A-Za-z]*")){
+    			txtResult.appendText(atemp.translateWord(result[0])+"\n");
+    		}
+    		else
+    			txtResult.appendText("Formato traduzione errato!");
+    	}
+    	
+    	if(result.length==2)   {
+    		if(result[0].matches("[A-Za-z]*") && result[1].matches("[A-Za-z]*") ){
+    			atemp.addWord(result[0], result[1]);
+    		}
+    		else
+    			txtResult.appendText("Formato aggiunta errato!\n");
+    		
+    	}
+    	
+    	if(result.length!=2 && result.length!=1)
+    		txtResult.appendText("Inserite trpoppe parole!\n");
+    	
+    	txtWord.clear();
     }
     
     
     @FXML
     void doReset(ActionEvent event) {
-
-    }
+    	txtResult.clear();
+    	}
     
 }
