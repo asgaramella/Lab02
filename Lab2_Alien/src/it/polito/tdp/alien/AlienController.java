@@ -96,22 +96,19 @@ public class AlienController {
     void doRicerca(ActionEvent event) {
     	String stemp=txtRicerca.getText().toLowerCase();
     	stemp=stemp.replaceAll("\\?", ".");
-    	LinkedHashMap<String,WordEnhanced> listone=new LinkedHashMap<String,WordEnhanced>();
+    	LinkedHashSet<String> listone=new LinkedHashSet<String>();
     	for(WordEnhanced etemp: atemp.getDizionario()){
     		if(etemp.compare(stemp)){
     			LinkedList<String> ltemp=new LinkedList<String>(atemp.translateWord(etemp.getAlienWord()));
     			for(String s:ltemp){
-    				 WordEnhanced wtemp=new WordEnhanced(s);
-    				listone.put(wtemp.getAlienWord(), wtemp);
+    				
+    			     listone.add(s);
     			}
-    			
-    			}
-    		for(String s: listone.keySet()){
-				txtResult.appendText(s+"\n");
-    	}
-    	
-    	
-    	} 	
- }
+    	  }
+    	} 
+    	for(String s: listone){
+			txtResult.appendText(s+"\n");
+    		}
+    }
     
 }
