@@ -17,7 +17,8 @@ public class AlienDictionary {
 	}
 
 
-
+    //nella sol con lista dovevi usare contains per controllare sistenze
+	//poi get(indice obj)per ottenere indice dove si trova parola ricercata indexOf(alienWord)
 	public void addWord(String alienWord, String translation){
 		boolean trovato=false;
 		if(dizionario.size()!=0){

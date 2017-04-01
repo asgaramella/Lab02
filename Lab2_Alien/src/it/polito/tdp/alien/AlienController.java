@@ -55,6 +55,9 @@ public class AlienController {
     	}
     	primaVolta=false;
     	String[] result =txtWord.getText().toLowerCase().split(" ");
+    	// sol alternativa usare StringTokenizer
+    	//StringTokenizer st= new StringTokenizer(riga," ");
+    	
     	if(result.length==1){
     		
     		if(result[0].matches("[A-Za-z]*")){
@@ -93,13 +96,17 @@ public class AlienController {
     void doRicerca(ActionEvent event) {
     	String stemp=txtRicerca.getText().toLowerCase();
     	stemp=stemp.replaceAll("\\?", ".");
-    	LinkedList<String> listone=new LinkedList<String>();
+    	LinkedHashMap<String,WordEnhanced> listone=new LinkedHashMap<String,WordEnhanced>();
     	for(WordEnhanced etemp: atemp.getDizionario()){
     		if(etemp.compare(stemp)){
     			LinkedList<String> ltemp=new LinkedList<String>(atemp.translateWord(etemp.getAlienWord()));
-    			listone.addAll(ltemp);
+    			for(String s:ltemp){
+    				 WordEnhanced wtemp=new WordEnhanced(s);
+    				listone.put(wtemp.getAlienWord(), wtemp);
     			}
-    		for(String s:listone){
+    			
+    			}
+    		for(String s: listone.keySet()){
 				txtResult.appendText(s+"\n");
     	}
     	
